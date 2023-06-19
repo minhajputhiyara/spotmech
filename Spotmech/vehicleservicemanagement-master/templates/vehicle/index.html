@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <script>
+    if (navigator.geolocation) {
+      // Show popup asking for permission to access user's location
+      navigator.geolocation.getCurrentPosition(function(position) {
+        // If permission is granted, do something with the user's location
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        // ... your code to use the location ...
+      }, function(error) {
+        // If permission is denied, show an error message
+        switch(error.code) {
+          case error.PERMISSION_DENIED:
+            alert("User denied the request for Geolocation.");
+            break;
+          case error.POSITION_UNAVAILABLE:
+            alert("Location information is unavailable.");
+            break;
+          case error.TIMEOUT:
+            alert("The request to get user location timed out.");
+            break;
+          case error.UNKNOWN_ERROR:
+            alert("An unknown error occurred.");
+            break;
+        }
+      });
+    } else {
+      // Geolocation API is not supported by the browser
+      alert("Geolocation is not supported by this browser.");
+    }
+    
+  </script>
+  <meta charset="utf-8">
+  <title>SPotMeCH</title>
+  <style media="screen">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      background-image: url('{% static "images/spotmech.png" %}');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+
+    .button-link {
+      display: inline-block;
+      padding: 12px 24px;
+      margin-right: 20px;
+      background-color: #2ecc71;
+      color: #fff;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    
+    .button {
+      display: block;
+      width: 400px;
+      height: 50px;
+      background-color: red;
+      color: white;
+      text-align: center;
+      line-height: 50px;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 25px;
+      margin: 0 auto;
+    }
+    
+
+    .bg-image {
+      background-image: url('{% static "images/nilamburmap.png" %}');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 579px;
+    }
+    
+      h1 {
+        color: white;
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+      }
+    
+    
+  </style>
+
+</head>
+
+<body>
+  {% include "vehicle/navbar.html" %}
+  <br><br>
+
+  <div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px;">
+   
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    </div>
+
+    <br><br><br>
+   
+    <div style="background-color: #f9f9f9; border: 2px solid #008080; border-radius: 10px; padding: 10px; text-align: center;">
+      <h2 style="font-size: 28px; font-weight: bold; color: #008080;">Trusted Mechanics at Your Fingertips</h2>
+      <p style="font-size: 18px;">Our team of expert mechanics is available 24/7 to help you get back on the road quickly and safely. With our reliable and trustworthy service, you can rest assured that your vehicle is in good hands.</p>
+    </div>
+    
+    <br><br><br>
+
+    <div class="bg-image">
+      <h1>Welcome to Nilambur</h1>
+      <br><br><br><br><br><br><br><br><br><br>
+      <a href="user-mechanic" class="button">Click here to see nearby mechanic</a>
+
+      
+
+    </div>
+    
+
+    <br><br><br><br><br><br>
+    
+
+  {% include "vehicle/customer_mechanic_cards.html" %}
+  <br><br><br><br>
+  {% include "vehicle/footer.html" %}
+</body>
+
+</html>

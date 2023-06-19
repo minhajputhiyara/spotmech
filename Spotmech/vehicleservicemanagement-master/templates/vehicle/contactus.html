@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <link rel="stylesheet" href="/path/to/font-awesome/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+  .contact {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #333;
+  }
+  
+  .contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+  }
+  
+  .contact-item i {
+    font-size: 2rem;
+    margin-right: 10px;
+    color: #333;
+  }
+</style>
+
+
+
+</head>
+
+<body>
+
+  {% include "vehicle/navbar.html" %}
+  <br><br>
+
+
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <p>Phone: 9876543210</p>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <p>Email: mishab@gmail.com</p>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <p> Nilambur</p>
+      </div>
+    </div>
+
+
+  <center>
+    <h3 class='alert alert-success'>Send Us Your Valuable Feedback !</h3>
+
+    <form method="POST">
+      <!-- Very Important csrf Token -->
+      {% csrf_token %}
+      <div class="form-group">
+        <p>
+        <h3>{{ form.as_p }}</h3>
+        </p>
+        <br>
+        <input type="submit" value="Send Message" class='btn btn-primary btn-lg'>
+      </div>
+    </form>
+  </center>
+ 
+  {% include "vehicle/footer.html" %}
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <style>
+    
+    .card {
+      margin-bottom: 30px;
+      border: 4px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .card:hover {
+      border-color: #007bff;
+    }
+    
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .card-title {
+      margin-bottom: 10px;
+    }
+    
+    .card-text {
+      margin-bottom: 10px;
+    }
+    
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+    
+    .btn-primary:hover {
+      background-color: #0069d9;
+      border-color: #0062cc;
+    }
+    .card-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    .card-column {
+      width: 48%;
+      margin-bottom: 20px;
+    }
+
+      .card-column {
+        width: 100%;
+      }
+    
+    
+    
+  </style>
+
+  <title></title>
+</head>
+
+<body>
+
+  {% include "vehicle/navbar.html" %}
+  <br><br><br><br>
+	<!-- main content -->
+	<!-- main content -->
+<div class="card-group">
+  <br><br><br><br>
+  {% for m in mechanics %}
+  <div class="card card-column">
+    <img src="{% if m.profile_pic %}{{ m.profile_pic.url }}{% else %}{% static 'images/mech.png' %}{% endif %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ m.get_name }}</h5>
+      <p class="card-text">{{ m.skill }}</p>
+      <p class="card-text">{{ m.address }}</p>
+      <p class="card-text">{{ m.rating }}</p>
+      <a href="tel:{{ m.mobile }}" class="btn btn-primary">Call Now</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<br><Br>
+ 
+  <h4 align=center>By logging in, you'll gain access to exclusive features such as personalized recommendations, saved preferences, and more. Don't miss out on the benefits - sign in now!
+  </h4>
+  <br>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="customersignup" role="button" style="background-color: #8B0000; border-color: black;">Create Your Account</a>
+    <a class="btn btn-primary btn-lg" href="customerlogin" role="button" style="background-color: #8B0000; border-color: black;">Login</a>
+  </p>
+  <br><Br>
+{% include "vehicle/footer.html" %}
+  <div class="copy">
+    <p>Copyright 2023 SPotMeCH. Designed by SPotMeCH Team. All rights reserved.</p>
+  </div>
+</body>
+
+</html>

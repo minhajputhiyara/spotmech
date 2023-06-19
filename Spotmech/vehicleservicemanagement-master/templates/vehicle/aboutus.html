@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <style media="screen">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+
+    .alert {
+      margin: 0px;
+    }
+  </style>
+
+  <title></title>
+</head>
+
+<body>
+
+  {% include "vehicle/navbar.html" %}
+  <br><br>
+  <center>
+    <h3 class='alert alert-success' style="margin-bottom:0px;">About Us !</h3>
+  </center>
+  <div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px;">
+    <h1 class="display-4">We're always here to help, even when your vehicle can't</h1>
+    <p class="lead">Welcome to SpoTMeCh, the ultimate on road vehicle breakdown assistance websystem! Our team of dedicated professionals has created a unique platform that connects drivers with reliable and trustworthy mechanics, wherever they may be.
+
+      At SpoTMeCh, we understand how frustrating and stressful it can be when your vehicle breaks down unexpectedly. That's why we have designed our websystem to be a one-stop solution for all your roadside assistance needs. With just a few clicks, you can access a network of experienced mechanics who are ready to help you get back on the road.
+      
+      Our websystem is easy to use and accessible 24/7, so you can get help whenever you need it, no matter the time or location. We take pride in our commitment to quality service and customer satisfaction, which is why we only work with mechanics who meet our rigorous standards.
+      
+      Our mission is to provide drivers with a seamless and hassle-free experience, so you can focus on getting back to your journey. We are constantly improving our websystem to meet the changing needs of our users, and we welcome your feedback to help us serve you better.
+      
+      Thank you for choosing SpoTMeCh. We look forward to being your trusted partner for all your on road vehicle breakdown assistance needs..</p>
+    <hr class="my-4">
+    <p>Explore our Website.</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="/" role="button">HOME</a>
+    </p>
+  </div>
+  
+  {% include "vehicle/footer.html" %}
+  <div class="copy">
+    <p>Copyright 2023 SPotMeCH. Designed by SPotMeCH Team. All rights reserved.</p>
+  </div>
+</body>
+
+</html>
