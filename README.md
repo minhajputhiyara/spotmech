@@ -1,4 +1,4 @@
-SpotMech
+#SpotMech
 SpotMech is a web application built using Python and Django that helps drivers and vehicle users easily find nearby mechanics. The solution integrates Mapbox for handling location-related features, ensuring users can quickly locate the nearest mechanic to their current location.
 
 Table of Contents
